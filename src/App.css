@@ -1,0 +1,181 @@
+/* body */
+body {
+  background: #28292c;
+  color: #6c757d;
+  margin: 0;
+  padding: 0;
+  font-family: 'calibri';
+}
+
+/* main flexbox layout */
+.admin {
+  display: flex;
+  flex-flow: row wrap;
+  height: 100vh;
+  width: 100vw;
+}
+
+.admin > * {
+  flex: 1 100%;
+}
+
+/* main page header */
+.header {
+  align-items: center;
+  background-color: #343a40;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  height: 10%;
+  justify-content: flex-start;
+  padding-left: 2em;
+  position: relative;
+}
+
+.header a {
+  padding-left: 4em;
+}
+
+.page-content {
+  height: 90%;
+  overflow: auto;
+}
+
+/* side bar */
+.aside {
+  align-items: center;
+  background-color: black;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-bottom: 2em;
+  padding-top: 2em;
+  position: relative;
+}
+
+.aside a {
+  padding: 1.6em;
+  padding-bottom: 2em;
+  margin-top: -28px;
+}
+
+/* mobile first responsiveness */
+@media all and (min-width: 600px) {
+  .aside {
+    flex: 1 0 0;
+  }
+}
+
+@media all and (min-width: 800px) {
+  .page-content {
+    flex: 5 0px;
+  }
+
+  .aside {
+    order: 1;
+  }
+
+  .page-content {
+    order: 2;
+  }
+}
+
+/* global styles and helper color classes*/
+.aside a {
+  color: #6c757d;
+}
+
+.aside a:last-child {
+  color: white;
+}
+
+.header a {
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+.--color-white {
+  color: white;
+}
+
+.--color-grey {
+  color: #6c757d;
+}
+
+.--background-dark {
+  background-color: #37383c;
+}
+
+/* container for main content header and button */
+.page-content__header-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-content__header-container h1 {
+  color: white;
+  font-weight: 100;
+  padding-left: 1em;
+}
+
+.page-content__header-container button {
+  margin-right: 6em;
+  padding-right: 1em;
+}
+
+.dot-button {
+  font-size: 1.8em;
+  color: #6c757d;
+}
+
+/* expandable menu */
+.expandable-menu {
+  display: flex;
+  justify-content: space-evenly;
+  background: black;
+  margin: -9px 63px 0px 73px;
+  padding: 0.7em;
+}
+
+.expandable-menu a {
+  color: white;
+}
+
+/* classes for rounded corners */
+.expandable-menu--bottom-left-radius {
+  border-bottom-left-radius: 0.2em;
+}
+
+.expandable-menu--bottom-right-radius {
+  border-bottom-right-radius: 0.2em;
+}
+
+/* checkbox styling */
+input[type='checkbox'] {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  font-size: 17px;
+  visibility: hidden;
+}
+
+input[type='checkbox']:after {
+  content: ' ';
+  display: flex;
+  justify-content: center;
+  color: darkorange;
+  width: 25px;
+  height: 25px;
+  visibility: visible;
+  border: 1px dashed darkorange;
+  border-radius: 5px;
+}
+
+input[type='checkbox']:checked:after {
+  content: '\2714';
+  font-weight: bold;
+}
