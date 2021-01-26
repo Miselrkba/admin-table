@@ -8,5 +8,5 @@
     -mobile first
 
 
-* run yarn
-* then yarn start
+* run yarn to install npm packages
+* then yarn start to run app
